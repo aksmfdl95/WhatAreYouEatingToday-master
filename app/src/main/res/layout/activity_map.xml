@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".MapActivity">
 
-        <com.nhn.android.maps.NMapView
-            android:id="@+id/map_naver"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </com.nhn.android.maps.NMapView>
+     <com.hnsky.whatareyoueatingtoday.NaverMapView
+         android:id="@+id/navermap"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
 
+     </com.hnsky.whatareyoueatingtoday.NaverMapView>
 </RelativeLayout>

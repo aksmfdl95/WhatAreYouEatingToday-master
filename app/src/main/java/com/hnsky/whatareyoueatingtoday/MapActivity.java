@@ -1,10 +1,15 @@
 package com.hnsky.whatareyoueatingtoday;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.Build;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.nhn.android.maps.NMapActivity;
 import com.nhn.android.maps.NMapCompassManager;
@@ -28,11 +33,10 @@ public class MapActivity extends NMapActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_map);
 
         //화면에 네이버 지도 보여주기
-        mMapView=findViewById(R.id.map_naver);
-        mMapView = new NMapView(this);
-        setContentView(mMapView);
+        mMapView = findViewById(R.id.navermap);
         mMapView.setClientId(CLIENT_ID); // 클라이언트 아이디 값 설정
         mMapView.setClickable(true);
         mMapView.setEnabled(true);
@@ -40,6 +44,35 @@ public class MapActivity extends NMapActivity {
         mMapView.setFocusableInTouchMode(true);
         mMapView.requestFocus();
 
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            if(checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+                String[] permissions = new String[]{Manifest.permission.ACCESS_FINE_LOCATION};
+                requestPermissions(permissions, 10);
+            }
+        }
+        LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        Location location;
+        location = null;
+
+//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//            System.out.println("아무거나");
+//            return;
+//        }
+        if (locationManager.isProviderEnabled("gps")) {
+            location = locationManager.getLastKnownLocation("gps");
+        }else if(locationManager.isProviderEnabled("network")){
+            location=locationManager.getLastKnownLocation("network");
+        }
+        System.out.println(location+"내위치");
+
+        double latitude=location.getLatitude();
+        double longitud=location.getLongitude();
+        System.out.println(latitude+" , "+longitud);
+
+        }
+
+
+
     }
 
-}
+

@@ -6,54 +6,68 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="3"
+    android:background="@drawable/foodbackimg"
     tools:context=".LunchActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
         android:layout_weight="1">
-
-        <ImageView
-            android:id="@+id/iv_food"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/test2"
+            android:textColor="#ffffff"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="30dp"/>
     </RelativeLayout>
 
-    <RelativeLayout
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_food"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@drawable/lunch_food_01"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2">
+        android:layout_height="0dp"
+        android:weightSum="3"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:weightSum="3"
-            android:padding="8dp">
+            android:layout_height="0dp"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:text="@string/thisis"
+            android:onClick="clickThis"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:text="@string/RePlay"
+            android:onClick="clickChange"/>
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:text="@string/BordGo"
+            android:onClick="clickBord"/>
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/bluebuttonm"
-                android:onClick="clickThis"/>
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/redbutton"
-                android:onClick="clickChange"/>
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/yellowbutton"
-                android:onClick="clickBord"/>
-
-        </LinearLayout>
-
-    </RelativeLayout>
+    </LinearLayout>
 
 </LinearLayout>

@@ -9,9 +9,11 @@ import android.widget.ImageView;
 
 import java.util.Random;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class BreakfastActivity extends AppCompatActivity {
 
-    ImageView iv;
+    CircleImageView iv;
     Random rnd= new Random();
     int count = rnd.nextInt(9);
 

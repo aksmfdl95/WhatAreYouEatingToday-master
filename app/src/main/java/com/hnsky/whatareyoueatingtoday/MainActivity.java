@@ -8,9 +8,6 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView iv_bf;
-    ImageView iv_lc;
-    ImageView iv_dn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,18 +16,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void clickBreak(View v){
+    public void clickBtn1(View v){
         Intent intent= new Intent(this,BreakfastActivity.class);
         startActivity(intent);
     }
 
-    public void clickLunch(View v){
+    public void clickBtn2(View v){
         Intent intent= new Intent(this,LunchActivity.class);
         startActivity(intent);
     }
 
-    public void clickDinner(View v){
-        Intent intent= new Intent(this, DinnerActivity.class);
+    public void clickBtn3(View v){
+        Intent intent= new Intent(this,DinnerActivity.class);
         startActivity(intent);
     }
+
+
+
 }

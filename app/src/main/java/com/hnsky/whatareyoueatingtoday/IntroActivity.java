@@ -36,7 +36,7 @@ public class IntroActivity extends AppCompatActivity {
         ActionBar actionBar= getSupportActionBar();
         actionBar.hide();
 
-        //3초후 인트로 화면 끝내기
+        //2.5초후 인트로 화면 끝내기
         Handler handler= new Handler();
         handler.postDelayed(new Runnable() {
             @Override

@@ -8,9 +8,11 @@ import android.widget.ImageView;
 
 import java.util.Random;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class LunchActivity extends AppCompatActivity {
 
-    ImageView iv;
+    CircleImageView iv;
     Random rnd= new Random();
     int count = rnd.nextInt(5);
 
@@ -28,8 +30,6 @@ public class LunchActivity extends AppCompatActivity {
     }
 
     public void clickChange(View v){
-        //클릭하면 랜덤한 음식이미지로 바꾼다.
-        //이미지 배열에 이미지들을 저장하고 클릭할때마다 랜덤하게 이미지를 바꾼다.
 
         Random rnd= new Random();
         int count = rnd.nextInt(5);

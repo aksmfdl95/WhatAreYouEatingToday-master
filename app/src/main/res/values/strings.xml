@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">오늘 뭐먹지?</string>
     <string name="str_done">완료</string>
+    <string name="test1">아침 메뉴 추천</string>
+    <string name="test2">점심 메뉴 추천</string>
+    <string name="test3">저녁 메뉴 추천</string>
+    <string name="thisis">이걸로 할게</string>
+    <string name="RePlay">다른걸로 할래</string>
+    <string name="BordGo">게시판으로 가자</string>
+
 </resources>

@@ -21,6 +21,7 @@ public class BordActivity extends AppCompatActivity {
 
         // Initializing the TabLayout
         tabLayout =findViewById(R.id.tabLayout);
+
         tabLayout.addTab(tabLayout.newTab().setText("공지사항"));
         tabLayout.addTab(tabLayout.newTab().setText("게시판"));
         tabLayout.addTab(tabLayout.newTab().setText("사용자의 소리"));

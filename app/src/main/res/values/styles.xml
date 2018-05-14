@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.Appbar">
+        <item name="titleTextColor">#FFF</item>
+        <item name="colorControlNormal">#FFF</item>
+        <item name="subtitleTextColor">#FFF</item>
+    </style>
+
 </resources>

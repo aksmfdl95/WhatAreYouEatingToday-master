@@ -3,11 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/menu_aa"
-        android:title=""
+        android:title="@string/newItem"
         app:showAsAction="never"/>
 
-    <item android:id="@+id/menu_bb"
-        android:title="BB"
-        app:showAsAction="never"/>
 
 </menu>

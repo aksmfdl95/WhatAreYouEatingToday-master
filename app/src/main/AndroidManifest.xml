@@ -32,19 +32,19 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Design.NoActionBar"/>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".BreakfastActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Design.NoActionBar"/>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".LunchActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Design.NoActionBar"/>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".DinnerActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Design.NoActionBar"/>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".MapActivity"
             android:screenOrientation="portrait" />
@@ -52,7 +52,7 @@
             android:name=".BordActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-
+        <activity android:name=".BordItemActivity"></activity>
     </application>
 
 </manifest>

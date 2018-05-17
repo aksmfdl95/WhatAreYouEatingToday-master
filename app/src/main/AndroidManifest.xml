@@ -52,7 +52,6 @@
             android:name=".BordActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity android:name=".BordItemActivity"></activity>
     </application>
 
 </manifest>

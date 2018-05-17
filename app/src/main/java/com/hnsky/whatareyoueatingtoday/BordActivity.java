@@ -5,14 +5,21 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import java.util.ArrayList;
 
 public class BordActivity extends AppCompatActivity {
 
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
+    RecyclerView recyclerView;
+    MyAdapter adapter;
+    ArrayList<Item> items= new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,40 +29,12 @@ public class BordActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Initializing the TabLayout
-        tabLayout =findViewById(R.id.layout_tab);
+        recyclerView=findViewById(R.id.recycler);
+        adapter=new MyAdapter(this, items);
+        recyclerView.setAdapter(adapter);
 
-        tabLayout.addTab(tabLayout.newTab().setText("공지사항"));
-        tabLayout.addTab(tabLayout.newTab().setText("게시판"));
-        tabLayout.addTab(tabLayout.newTab().setText("사용자의 소리"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-
-        // Initializing ViewPager
-        viewPager = findViewById(R.id.pager);
-
-        // Creating TabPagerAdapter adapter
-        TabPagerAdapter pagerAdapter = new TabPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(pagerAdapter);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
-        // Set TabSelectedListener
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
+        RecyclerView.LayoutManager layoutManager=new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
 
     }
     @Override
@@ -68,11 +47,12 @@ public class BordActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.menu_aa:
-                Intent intent= new Intent(this,BordItemActivity.class);
-                startActivity(intent);
+
                 break;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

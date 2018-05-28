@@ -58,15 +58,23 @@ public class MapActivity extends NMapActivity {
 //            System.out.println("아무거나");
 //            return;
 //        }
-        if (locationManager.isProviderEnabled("gps")) {
-            location = locationManager.getLastKnownLocation("gps");
-        }else if(locationManager.isProviderEnabled("network")){
-            location=locationManager.getLastKnownLocation("network");
+        if (locationManager != null) {
+            if (locationManager.isProviderEnabled("gps")) {
+                location = locationManager.getLastKnownLocation("gps");
+            }else if(locationManager.isProviderEnabled("network")){
+                location=locationManager.getLastKnownLocation("network");
+            }
         }
         System.out.println(location+"내위치");
 
-        double latitude=location.getLatitude();
-        double longitud=location.getLongitude();
+        double latitude= 0;
+        if (location != null) {
+            latitude = location.getLatitude();
+        }
+        double longitud= 0;
+        if (location != null) {
+            longitud = location.getLongitude();
+        }
         System.out.println(latitude+" , "+longitud);
 
         }

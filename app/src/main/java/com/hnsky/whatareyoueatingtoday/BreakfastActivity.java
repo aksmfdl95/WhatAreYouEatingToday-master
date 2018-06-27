@@ -24,7 +24,7 @@ public class BreakfastActivity extends AppCompatActivity {
         iv=findViewById(R.id.iv_food);
 
         iv.setImageResource(R.drawable.food_01+count);
-
+        int a=10;
     }
 
     public void clickThis(View v){
